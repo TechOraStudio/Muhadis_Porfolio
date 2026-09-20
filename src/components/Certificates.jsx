@@ -1,44 +1,48 @@
 import { useState } from "react";
 
+// Images live in src/assets, so Vite needs them imported (not typed as "/path" strings).
+// Paths are relative to THIS file: src/components/Certificates.jsx -> ../assets/
+import frontendCertificate from "../assets/frontend.png";
+import pythonCertificate from "../assets/python.png";
+import ieeeCertificate from "../assets/ieee.png";
+
+// Static data lives outside the component so it isn't re-created on every render.
+// Each item has a unique `id`, which React uses as the list key.
+// Add a real verification URL in `credential` when you have one.
+const certificates = [
+  {
+    id: "frontend-piti-2025",
+    title: "Frontend Web Development",
+    issuer: "Promotezz International Training Institute (PITI)",
+    year: "2025",
+    category: "Development",
+    image: frontendCertificate,
+    credential: "",
+  },
+  {
+    id: "python-piti-2026",
+    title: "Python Programming",
+    issuer: "Promotezz International Training Institute (PITI)",
+    year: "2026",
+    category: "Python",
+    image: pythonCertificate,
+    credential: "",
+  },
+  {
+    id: "iee-certificate-2025",
+    title: "IEEE Participation",
+    issuer: "The Islamia Univerty Of Bhawalpur (IUB))",
+    year: "2026",
+    category: "Participate",
+    image: ieeeCertificate,
+    credential: "",
+  },
+];
+
+const categories = ["All", "Development", "Python", "Participation"];
+
 function Certificates() {
   const [activeCategory, setActiveCategory] = useState("All");
-
-  const certificates = [
-    {
-      title: "Frontend Web Development",
-      issuer: "Promotezz International Training Institute (PITI)",
-      year: "2025",
-      category: "Development",
-      image: "/assets/front-end Certificate.jpeg",
-      credential: "#",
-    },
-    {
-      title: "Frontend Web Development",
-      issuer: "Online Learning Platform",
-      year: "2025",
-      category: "Development",
-      image: "/certificates/javascript-certificate.jpg",
-      credential: "#",
-    },
-    {
-      title: "Python Programming",
-      issuer: "Promotezz International Training Institute (PITI)",
-      year: "2026",
-      category: "Python",
-      image: "/certificates/Backend-Python Certificate.jpeg",
-      credential: "#",
-    },
-    // {
-    //   title: "Graphic Design",
-    //   issuer: "Online Learning Platform",
-    //   year: "2025",
-    //   category: "Design",
-    //   image: "/certificates/design-certificate.jpg",
-    //   credential: "#",
-    // },
-  ];
-
-  const categories = ["All", "Development", "Python"];
 
   const filteredCertificates =
     activeCategory === "All"
@@ -103,7 +107,7 @@ function Certificates() {
 
           {filteredCertificates.map((certificate) => (
             <div
-              key={certificate.title}
+              key={certificate.id}
               className="group relative"
             >
 
@@ -119,6 +123,7 @@ function Certificates() {
                   <img
                     src={certificate.image}
                     alt={certificate.title}
+                    loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     onError={(event) => {
                       event.currentTarget.style.display = "none";
@@ -127,7 +132,7 @@ function Certificates() {
                     }}
                   />
 
-                  {/* Placeholder */}
+                  {/* Placeholder (shown only if the image fails to load) */}
                   <div className="absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-slate-900 to-slate-950">
                     <div className="text-center">
 
@@ -167,15 +172,18 @@ function Certificates() {
                     Issued by {certificate.issuer}
                   </p>
 
-                  {/* Button */}
+                  {/* View button: opens the credential link if there is one,
+                      otherwise opens the certificate image in a new tab */}
                   <div className="mt-6 flex items-center justify-between border-t border-slate-800 pt-5">
 
                     <span className="text-xs text-slate-600">
-                      Verified Credential
+                      {certificate.credential
+                        ? "Verified Credential"
+                        : "Certificate"}
                     </span>
 
                     <a
-                      href={certificate.credential}
+                      href={certificate.credential || certificate.image}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group/button inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-950 px-4 py-2 text-xs font-semibold text-slate-300 transition-all duration-300 hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400"
@@ -203,7 +211,7 @@ function Certificates() {
 
           <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30">
             <p className="text-2xl font-bold text-white">
-              {certificates.length}+
+              {certificates.length}
             </p>
 
             <p className="mt-1 text-xs text-slate-500">
