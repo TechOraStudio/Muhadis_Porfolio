@@ -18,13 +18,13 @@ export default function App() {
       <Certificates/>
       <Projects/>
       <Contact/>
-      {/*
-        TODO — build these next, same pattern as Navbar/Hero:
+      
+        {/* TODO — build these next, same pattern as Navbar/Hero:
         <Projects />   → replaces the old shoe "Products" grid
         <About />      → replaces "Heritage" story section
         <Skills />     → replaces "Craft" 4-step section
-        <Contact />    → replaces "Newsletter" section
-      */}
+        <Contact />    → replaces "Newsletter" section */}
+     
     </div>
   );
 }
