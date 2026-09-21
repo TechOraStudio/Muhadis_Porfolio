@@ -52,7 +52,7 @@ function Navbar() {
 
           {/* Desktop Resume */}
           <a
-            href="/cv.pdf"
+            href={`${import.meta.env.BASE_URL}cv.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative hidden overflow-hidden rounded-xl border border-blue-500/40 bg-blue-500/10 px-5 py-2.5 text-sm font-semibold text-blue-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-blue-500/20 sm:block"
@@ -132,16 +132,16 @@ function Navbar() {
             ))}
 
             {/* Mobile Resume */}
-            {/* Mobile Resume */}
-<a
-  href="/cv.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={handleNavClick}
-  className="mt-2 rounded-xl border border-blue-500/40 bg-blue-500/10 px-4 py-3 text-center text-sm font-semibold text-blue-400 transition-all duration-300 hover:border-blue-400 hover:bg-blue-500 hover:text-white"
->
-  View Resume ↗
-</a>
+            <a
+              href={`${import.meta.env.BASE_URL}cv.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleNavClick}
+              className="mt-2 rounded-xl border border-blue-500/40 bg-blue-500/10 px-4 py-3 text-center text-sm font-semibold text-blue-400 transition-all duration-300 hover:border-blue-400 hover:bg-blue-500 hover:text-white"
+            >
+              View Resume ↗
+            </a>
+
           </div>
         </div>
 
