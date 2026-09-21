@@ -32,10 +32,10 @@ function About() {
         </div>
 
         {/* ================= MAIN GRID ================= */}
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 
           {/* ================= CODE EDITOR ================= */}
-          <div className="group relative">
+          <div className="group relative min-w-0">
 
             {/* Glow */}
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600/20 via-cyan-500/10 to-blue-600/20 opacity-70 blur-xl transition duration-500 group-hover:opacity-100" />
@@ -87,7 +87,7 @@ function About() {
               {/* Code Area */}
               <div className="overflow-x-auto p-5 sm:p-6">
                 {activeTab === "developer.py" ? (
-                  <div className="code-editor min-w-[430px] text-sm leading-7">
+                  <div className="code-editor witespace-nowrap text-xs leading-6 sm:text-sm sm:leading-7">
 
                     <div>
                       <span className="mr-5 text-slate-600">01</span>
