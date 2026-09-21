@@ -18,7 +18,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
-  "homepage": "https://TechOraStudio.github.io/Muhadis_Porfolio",
+  "homepage": "https://TechOraStudio.github.io/Muhadis_Porfolio/",
   "devDependencies": {
     "@babel/core": "^7.29.7",
     "@eslint/js": "^10.0.1",
@@ -30,9 +30,9 @@
     "eslint": "^10.10.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.6",
+    "gh-pages": "^6.3.0",
     "globals": "^17.12.0",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.3.0",
-    "gh-pages": "^6.3.0"
+    "vite": "^8.3.0"
   }
 }

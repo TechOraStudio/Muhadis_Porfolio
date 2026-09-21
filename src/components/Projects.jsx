@@ -1,3 +1,7 @@
+import taskFlowImage from "../assets/task-flow.png";
+import ecommerceImage from "../assets/e-commerce.png";
+import skyPulseImage from "../assets/skypulse.png";
+import developerPortfolioImage from "../assets/developer-portfolio.png";
 const projects = [
   {
     title: "TaskFlow",
@@ -6,7 +10,7 @@ const projects = [
       "A modern project management application designed to manage projects, tasks, users and workflows through a clean developer-focused interface.",
     technologies: ["React", "Tailwind CSS", "FastAPI", "REST API"],
     status: "In Progress",
-    image: "/src/assets/task-flow.png",
+   image: taskFlowImage,
     github: "https://github.com/Techorastudio",
     live: "#",
     featured: true,
@@ -18,8 +22,8 @@ const projects = [
       "A Python-based sales management and analytics system for handling products, customers, orders and revenue data with database integration.",
     technologies: ["Python", "OOP", "MySQL", "PyMySQL"],
     status: "Completed",
-    image: "/src/assets/e-commerce.png",
-    github: "https://github.com/Techorastudio",
+    image: ecommerceImage, 
+     github: "https://github.com/Techorastudio",
     live: "#",
     featured: true,
   },
@@ -30,7 +34,7 @@ const projects = [
       "A weather application that provides current weather information and forecasts through a clean and responsive user interface.",
     technologies: ["JavaScript", "API", "HTML", "CSS"],
     status: "In Progress",
-    image: "/src/assets/skypulse.png",
+    image: skyPulseImage,
     github: "https://github.com/Techorastudio",
     live: "#",
     featured: false,
@@ -42,7 +46,7 @@ const projects = [
       "A professional developer portfolio built to showcase my software engineering journey, technical skills, projects and experience.",
     technologies: ["React", "Vite", "Tailwind CSS"],
     status: "Active",
-    image: "/src/assets/developer-portfolio.png",
+    image: developerPortfolioImage,
     github: "https://github.com/Techorastudio",
     live: "https://techorastudio.github.io/",
     featured: false,
